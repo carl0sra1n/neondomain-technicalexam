@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Hola</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/public/css/bootstrap/bootstrap.min.css}" />
+        <link rel="stylesheet" type="text/css" th:href="@{/public/css/datatables/datatables.min.css}" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    </head>
+    <body>
+        <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+            <div class="container">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6 text-md-end">
+                            <button type="button" class="btn btn-primary" id="openModal">New user</button>
+                            <button type="button" class="btn btn-danger" id="btnLogout">Logout</button>
+                        </div>
+                    </div>
+                </div>            
+                <h1 class="text-center mb-4">Users</h1>
+                <table class="table" id="tblUsuarios">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>User</th>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Age</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal" id="registerModal">
+                <div class="modal-dialog">
+                <div class="modal-content">
+            
+                    <div class="modal-header">
+                        <h4 class="modal-title">User Form</h4>
+                        <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                    <form id="usuarioForm">
+                        <div class="form-group">
+                            <label for="userName">ID:</label>
+                            <input type="text" class="form-control" id="id" name="id" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="userName">User name:</label>
+                            <input type="text" class="form-control" id="userName" name="userName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstName">First name:</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last name:</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age:</label>
+                            <input type="number" class="form-control" id="age" name="age" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                    </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <span id="deleteButton"></span>
+                    <button type="button" class="btn btn-primary" onclick="saveForm()">Save</button>
+                    </div>
+            
+                </div>
+                </div>
+            </div>
+        </div>
+        <script th:src="@{/public/js/jquery/jquery-3.7.1.min.js}"></script>
+        <script th:src="@{/public/js/popper/popper.min.js}"></script>
+        <script th:src="@{/public/js/bootstrap/bootstrap.min.js}"></script>
+        <script th:src="@{/public/js/sweetalert2/sweetalert2.all.min.js}"></script>
+        <script th:src="@{/public/js/datatables/datatables.min.js}"></script>
+        <script th:src="@{/public/js/users/users.js}"></script>
+    </body>
+</html>

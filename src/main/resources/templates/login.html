@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Sign In</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/public/css/bootstrap/bootstrap.min.css}" />
+        <link rel="stylesheet" type="text/css" th:href="@{/public/css/sweetalert2/sweetalert2.min.css}" />
+        <link rel="stylesheet" type="text/css" th:href="@{/public/css/login/login.css}" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+    <body class="text-center">
+      <main class="form-signin">
+        <img class="mb-4" th:src="@{/public/img/logo.png}" alt="">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" id="txtUserName" placeholder="Username">
+          <label for="floatingInput">Username</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="txtPassword" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+        <div class="container mt-2">
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="w-200 btn btn-lg btn-primary" id="signInButton">Sign in</button>
+            <button type="button" class="w-200 btn btn-lg btn-secondary" id="registerButton" onclick="openRegisterModal()">Register</button>
+          </div>
+        </div>
+      </main>
+      <div class="modal" id="registerModal">
+          <div class="modal-dialog">
+          <div class="modal-content">
+      
+              <div class="modal-header">
+                  <h4 class="modal-title">User Form</h4>
+                  <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+              <form id="usuarioForm">
+                  <div class="form-group">
+                      <label for="userName">User name:</label>
+                      <input type="text" class="form-control" id="userName" name="userName" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="firstName">First name:</label>
+                      <input type="text" class="form-control" id="firstName" name="firstName" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="lastName">Last name:</label>
+                      <input type="text" class="form-control" id="lastName" name="lastName" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="age">Age:</label>
+                      <input type="number" class="form-control" id="age" name="age" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="password">Password:</label>
+                      <input type="password" class="form-control" id="password" name="password" required>
+                  </div>
+              </form>
+              </div>
+              <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" onclick="saveForm()">Save</button>
+              </div>
+      
+          </div>
+          </div>
+      </div>
+      <script th:src="@{/public/js/jquery/jquery-3.7.1.min.js}"></script>
+      <script th:src="@{/public/js/popper/popper.min.js}"></script>
+      <script th:src="@{/public/js/bootstrap/bootstrap.min.js}"></script>
+      <script th:src="@{/public/js/sweetalert2/sweetalert2.all.min.js}"></script>
+      <script th:src="@{/public/js/login/login.js}"></script>
+    </body>
+</html>
